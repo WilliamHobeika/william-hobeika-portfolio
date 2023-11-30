@@ -2,26 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+  --line-color: white;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  /* gradients */
+  .bg-gradient1 {
+    @apply bg-[#FBE2E4] absolute -top-24 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] -z-10;
   }
-}
+  .bg-gradient2 {
+    @apply bg-[#DBD7FB] absolute -top-4 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] -z-10;
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  /* navbar */
+  .navbar-container {
+    @apply fixed -translate-x-1/2 top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white border-opacity-70 bg-white bg-opacity-50 shadow-lg shadow-black/[0.1] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full max-sm:rounded-b-2xl;
+  }
+  .navbar {
+    @apply flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0;
+  }
+  .navbar-links_container {
+    @apply flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5;
+  }
+  .navbar-links {
+    @apply flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition;
+  }
+
+  /* about */
+  .about {
+    @apply mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28;
+  }
+
+  /* project card */
+  .project-card_container {
+    @apply relative flex flex-col bg-gray-200/[0.9] max-w-[42rem] rounded-lg shadow-xl overflow-hidden sm:pr-8 sm:h-[20rem] transition-all cursor-pointer group-even:pl-8 hover:shadow-2xl;
+  }
+  .project-card_project-text {
+    @apply flex flex-col pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] h-full group-even:ml-[18rem];
+  }
+  .project-card_tags {
+    @apply bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full transition-all;
+  }
+  .project-card_project-image {
+    @apply absolute top-8 -right-32 w-[28.25rem] rounded-t-lg shadow-2xl group-hover:scale-[1.04] group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-2 group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2 group-even:right-[intial] group-even:-left-36 transition-all;
+  }
+  .project-card_hover-gradient {
+    @apply absolute inset-0 bg-gradient-to-r from-slate-200 via-[#525252] to-[#3d72b4] opacity-0 group-hover:opacity-90 transition-all duration-700 flex flex-col items-center justify-center;
+  }
+
+  /* skills */
+  .skills-container {
+    @apply mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40;
+  }
+  .skills-list {
+    @apply flex flex-wrap justify-center gap-2 text-lg text-gray-800;
+  }
+  .skills-list_item {
+    @apply flex flex-row items-center justify-center bg-white border border-black/[0.1] rounded-2xl gap-2 px-5 py-3 cursor-pointer;
+  }
+
+  /* contact */
+  .contact-container {
+    @apply mb-20 sm:mb-28 w-[min(100%,38rem)] text-center scroll-mt-28;
+  }
+  .contact-input {
+    @apply h-14 px-4 rounded-lg border border-black/10;
+  }
+  .contact-textarea {
+    @apply h-52 my-3 rounded-lg border border-black/10 p-4;
+  }
+  .contact-button {
+    @apply flex items-center justify-center text-lg font-medium gap-4 h-12 w-40 bg-gray-900 text-white rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition-all disabled:scale-100 disabled:bg-opacity-60 max-lg:self-center;
+  }
+  .contact_button-icon {
+    @apply opacity-70 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all;
+  }
 }
