@@ -7,14 +7,6 @@ html {
 }
 
 @layer components {
-  /* gradients */
-  .bg-gradient1 {
-    @apply bg-[#FBE2E4] absolute -top-24 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] -z-10 dark:bg-[#855F61];
-  }
-  .bg-gradient2 {
-    @apply bg-[#DBD7FB] absolute -top-4 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] -z-10 dark:bg-[#5F5C82];
-  }
-
   /* navbar */
   .navbar-container {
     @apply fixed -translate-x-1/2 top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white border-opacity-70 bg-white bg-opacity-50 shadow-lg shadow-black/[0.1] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full max-sm:rounded-b-3xl dark:bg-gray-950 dark:border-gray-800 dark:bg-opacity-50 dark:border-opacity-70;
@@ -31,7 +23,7 @@ html {
 
   /* about */
   .about {
-    @apply mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28;
+    @apply mb-28 max-w-[45rem] max-sm:mx-6 text-center leading-8 sm:mb-40 scroll-mt-28;
   }
 
   /* intro */
@@ -50,7 +42,7 @@ html {
 
   /* project card */
   .project-card_container {
-    @apply relative flex flex-col bg-gray-200/[0.9] max-w-[42rem] rounded-lg shadow-xl overflow-hidden sm:pr-8 sm:h-[20rem] transition-all cursor-pointer sm:group-even:pl-8 hover:shadow-2xl dark:bg-white/10;
+    @apply relative flex flex-col bg-gray-200/[0.9] max-w-[42rem] max-sm:mx-6 max-sm:mb-6 rounded-lg shadow-xl overflow-hidden sm:pr-8 sm:h-[20rem] transition-all cursor-pointer sm:group-even:pl-8 hover:shadow-2xl dark:bg-white/10;
   }
   .project-card_project-text {
     @apply flex flex-col pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] h-full sm:group-even:ml-[18rem];
@@ -67,7 +59,7 @@ html {
 
   /* skills */
   .skills-container {
-    @apply mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40;
+    @apply mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40 max-sm:mx-5;
   }
   .skills-list {
     @apply flex flex-wrap justify-center gap-2 text-lg text-gray-800 dark:text-white;
@@ -81,10 +73,10 @@ html {
     @apply mb-20 sm:mb-28 w-[min(100%,38rem)] text-center scroll-mt-28;
   }
   .contact-input {
-    @apply h-14 px-4 rounded-lg border border-black/10 dark:text-gray-950 dark:bg-white dark:bg-opacity-90 dark:focus:bg-opacity-100 transition-all dark:outline-none;
+    @apply h-14 px-4 max-sm:mx-5 rounded-lg border border-black/10 dark:text-gray-950 dark:bg-white dark:bg-opacity-90 dark:focus:bg-opacity-100 transition-all dark:outline-none;
   }
   .contact-textarea {
-    @apply h-52 my-3 rounded-lg border border-black/10 p-4 dark:text-gray-950 dark:bg-white dark:bg-opacity-90 dark:focus:bg-opacity-100 transition-all dark:outline-none;
+    @apply h-52 my-3 max-sm:mx-5  rounded-lg border border-black/10 p-4 dark:text-gray-950 dark:bg-white dark:bg-opacity-90 dark:focus:bg-opacity-100 transition-all dark:outline-none;
   }
   .contact-button {
     @apply flex items-center justify-center text-lg font-medium gap-4 h-12 w-40 bg-gray-900 text-white rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition-all disabled:scale-100 disabled:bg-opacity-60 max-lg:self-center dark:bg-white/20;
