@@ -5,6 +5,8 @@ import Link from "next/link";
 
 import { motion } from "framer-motion";
 
+import { footerLinks } from "@/constants";
+
 //icons
 import { BsArrowRight } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
@@ -67,7 +69,7 @@ const Intro = () => {
       </motion.h1>
 
       <motion.div
-        className="flex flex-col sm:flex-row items-center justify-evenly gap-2 px-4 text-lg font-medium"
+        className="intro_links-container"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -77,7 +79,7 @@ const Intro = () => {
         {/* contact link */}
         <Link
           href="#contact"
-          className="bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full w-fit outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition-all group"
+          className="intro_contact-link group"
           onClick={() => {
             setActiveSection("Contact");
             setTimeOfLastClick(Date.now());
@@ -93,13 +95,28 @@ const Intro = () => {
         <a
           href="/William-Hobeika-Resume.pdf"
           download
-          className="bg-white px-7 py-3 flex items-center gap-2 rounded-full cursor-pointer outline-none focus:scale-110 hover:scale-110 active:scale-105 transition-all group"
+          className="intro_resume-link group"
         >
           Download resume{" "}
           <div className="opacity-70 group-hover:translate-y-1 transition-all">
             <HiDownload />
           </div>
         </a>
+
+        {/* socials */}
+        <div className="flex items-center justify-center gap-3">
+          {footerLinks.map((item, index) => (
+            <Link key={index} href={item.href} className="intro_social-link">
+              <Image
+                src={item.icon}
+                alt={item.name}
+                width={30}
+                height={30}
+                className="object-contain"
+              />
+            </Link>
+          ))}
+        </div>
       </motion.div>
     </section>
   );

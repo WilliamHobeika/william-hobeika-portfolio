@@ -6,9 +6,11 @@ import "./globals.css";
 //components
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import ThemeSwitch from "@/components/ui/ThemeSwitch";
 
 //context
 import ActiveSectionContextProvider from "@/context/ActiveSectionContext";
+import ThemeContextProvider from "@/context/ThemeContext";
 
 //toaster
 import { Toaster } from "react-hot-toast";
@@ -25,18 +27,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${inter.className} bg-gray-100 text-gray-950 relative pt-28 sm:pt-36`}
+        className={`${inter.className} bg-gray-100 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
       >
         <div className="bg-gradient1" />
         <div className="bg-gradient2" />
 
-        <ActiveSectionContextProvider>
-          <Navbar />
-          {children}
-          <Footer />
+        <ThemeContextProvider>
+          <ActiveSectionContextProvider>
+            <Navbar />
+            {children}
+            <Footer />
 
-          <Toaster position="top-right" />
-        </ActiveSectionContextProvider>
+            <Toaster position="top-right" />
+            <ThemeSwitch />
+          </ActiveSectionContextProvider>
+        </ThemeContextProvider>
       </body>
     </html>
   );

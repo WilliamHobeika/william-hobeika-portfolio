@@ -29,7 +29,7 @@ const ActiveSectionContextProvider = ({ children }: { children: React.ReactNode 
 
 export default ActiveSectionContextProvider;
 
-//custom hook
+//custom hook to consume the context
 export function useActiveSectionContext() {
   const ASContext = useContext(ActiveSectionContext);
 

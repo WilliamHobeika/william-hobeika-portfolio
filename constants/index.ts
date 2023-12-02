@@ -44,7 +44,8 @@ export const links = [
 export const projectsData = [
   {
     title: "Radiate Threads",
-    logo: "/assets/radiate-logo.png",
+    logoLight: "/assets/radiate-logo-light.png",
+    logoDark: "/assets/radiate-logo-dark.png",
     description:
       "Radiate Threads is a full-stack web application, encourages engaging conversations, thread creation, and community building, providing a dynamic space for meaningful interactions.",
     tags: ["React", "Next.js", "MongoDB", "Tailwind", "Clerk", "Typescript"],
@@ -53,7 +54,8 @@ export const projectsData = [
   },
   {
     title: "Tune-in",
-    logo: "/assets/tunein-logo.png",
+    logoLight: "/assets/tunein-logo-light.png",
+    logoDark: "/assets/tunein-logo-dark.png",
     description:
       "Effortlessly search, play previews, and explore global charts. Uncover song, artist, and album details for a personalized musical journey.",
     tags: ["React", "Vite", "Tailwind", "Redux", "Rapid Api", "Javascript"],
@@ -62,7 +64,8 @@ export const projectsData = [
   },
   {
     title: "Metaverse Madness",
-    logo: "/assets/metaverse-logo.png",
+    logoLight: "/assets/metaverse-logo-light.png",
+    logoDark: "/assets/metaverse-logo-dark.png",
     description:
       "Step into a world of motion magic with Metaverse Madness. This frontend showcase application captivates with Framer Motion animations, bringing the metaverse to life.",
     tags: ["React", "Next.js", "Tailwind", "Framer Motion", "Javascript"],
@@ -71,7 +74,8 @@ export const projectsData = [
   },
   {
     title: "Will To Step",
-    logo: "/assets/w-logo.png",
+    logoLight: "/assets/w-logo-light.png",
+    logoDark: "/assets/w-logo-dark.png",
     description:
       "Explore sports e-commerce with Will-to-Step, a captivating frontend application showcasing a dynamic landing page highlighting popular products, services, and testimonials.",
     tags: ["React", "Vite", "Tailwind", "Javascript"],
@@ -80,7 +84,8 @@ export const projectsData = [
   },
   {
     title: "Four Wheeliam",
-    logo: "/assets/w-logo.png",
+    logoLight: "/assets/w-logo-light.png",
+    logoDark: "/assets/w-logo-dark.png",
     description:
       "Discover the world of automobiles with Four-Wheeliam. Explore the diverse range of vehicles, each with its unique features and specifications",
     tags: ["React", "Next.js", "Tailwind", "Typescript"],
@@ -112,7 +117,7 @@ export const skillsData = [
   },
   {
     name: "Next.js",
-    icon: React.createElement(TbBrandNextjs, { color: "#000000" }),
+    icon: React.createElement(TbBrandNextjs),
   },
   {
     name: "Node.js",

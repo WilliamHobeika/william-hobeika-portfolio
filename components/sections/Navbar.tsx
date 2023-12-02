@@ -39,7 +39,7 @@ const Navbar = () => {
                   setTimeOfLastClick(Date.now());
                 }}
                 className={`navbar-links ${
-                  activeSection === link.name && "text-gray-950"
+                  activeSection === link.name && "text-gray-950 dark:text-gray-200"
                 }`}
               >
                 {link.name}
@@ -47,7 +47,7 @@ const Navbar = () => {
                   <motion.span
                     layoutId="activeSection"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    className="bg-gray-200 opacity-80 rounded-full absolute inset-0 -z-10"
+                    className="bg-gray-200 opacity-80 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
                   ></motion.span>
                 )}
               </Link>

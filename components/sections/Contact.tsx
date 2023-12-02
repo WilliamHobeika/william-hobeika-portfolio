@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 import { motion } from "framer-motion";
 
 import toast from "react-hot-toast";
@@ -42,10 +40,10 @@ const Contact = () => {
           duration: 0.8,
         })}
       >
-        <p className="text-gray-950">
+        <p className="text-gray-950 dark:text-white/80">
           Please contact me directly at{" "}
           <a
-            className="underline text-gray-700 font-medium"
+            className="underline text-gray-600 font-medium dark:text-white/60"
             href="mailto:william.n.hobeika@gmail.com"
           >
             william.n.hobeika@gmail.com

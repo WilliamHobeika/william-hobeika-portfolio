@@ -39,7 +39,11 @@ const Skills = () => {
             className="skills-list_item"
           >
             {skill.name}
-            <span className="text-[1.5rem]">{skill.icon}</span>
+            <span
+              className={`text-[1.5rem] ${skill.name === "Next.js" && "dark:text-white"}`}
+            >
+              {skill.icon}
+            </span>
           </motion.li>
         ))}
       </ul>

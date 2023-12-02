@@ -8,9 +8,13 @@ import { useScroll, motion, useTransform } from "framer-motion";
 
 import { useRef } from "react";
 
+//hooks
+import { useTheme } from "@/context/ThemeContext";
+
 interface ProjectCardProps {
   title: string;
-  logo: string;
+  logoLight: string;
+  logoDark: string;
   description: string;
   tags: string[];
   imageUrl: string;
@@ -19,12 +23,15 @@ interface ProjectCardProps {
 
 const ProjectCard = ({
   title,
-  logo,
+  logoLight,
+  logoDark,
   description,
   tags,
   imageUrl,
   link,
 }: ProjectCardProps) => {
+  const { theme } = useTheme();
+
   const reference = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
@@ -55,54 +62,60 @@ const ProjectCard = ({
         onClick={handleDelayedNavigation}
       >
         <article className="project-card_container">
-          <div>
-            <div className="project-card_project-text">
-              <h3 className="text-2xl font-medium">{title}</h3>
-              <p className="mt-2 leading-relaxed text-gray-700 mb-2">{description}</p>
-              <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-                {tags.map((tag, index) => (
-                  <li key={index} className="project-card_tags">
-                    {tag}
-                  </li>
-                ))}
-              </ul>
+          <div className="project-card_project-text">
+            <h3 className="text-2xl font-medium">{title}</h3>
+            <p className="mt-2 leading-relaxed text-gray-700 mb-2 dark:text-white/70">
+              {description}
+            </p>
+            <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
+              {tags.map((tag, index) => (
+                <li key={index} className="project-card_tags">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <Image
+            src={imageUrl}
+            alt={title}
+            width={1000}
+            height={1000}
+            className="project-card_project-image"
+          />
+
+          <div className="project-card_hover-gradient">
+            <div>
+              <Image
+                src={theme === "dark" ? logoLight : logoDark}
+                alt="project logo"
+                width={60}
+                height={60}
+                className="object-cover"
+              />
             </div>
-
-            <Image
-              src={imageUrl}
-              alt={title}
-              width={1000}
-              height={1000}
-              className="project-card_project-image"
-            />
-
-            <div className="project-card_hover-gradient">
-              <div>
+            <h1 className="font-mono font-semibold text-gray-950 text-2xl dark:text-white">
+              {title}
+            </h1>
+            {title !== "Tune-in" ? (
+              <div className="flex items-center justify-center gap-3 mt-5">
+                <p className="font-mono font-medium text-gray-950 dark:text-gray-200">
+                  Live Project
+                </p>
                 <Image
-                  src={logo}
-                  alt="project logo"
-                  width={60}
-                  height={60}
-                  className="object-cover"
+                  src={`${
+                    theme === "light" ? "/assets/click.svg" : "/assets/click-white.svg"
+                  }`}
+                  alt="arrow right"
+                  width={35}
+                  height={35}
                 />
               </div>
-              <h1 className="font-mono font-semibold text-gray-950 text-2xl">{title}</h1>
-              {title !== "Tune-in" ? (
-                <div className="flex items-center justify-center gap-3 mt-5">
-                  <p className="font-mono font-medium">Live Project</p>
-                  <Image
-                    src="/assets/click.svg"
-                    alt="arrow right"
-                    width={35}
-                    height={35}
-                  />
-                </div>
-              ) : (
-                <p className="w-96 font-mono font-medium text-center mt-5">
-                  Kindly, contact me to get the URL of the live project
-                </p>
-              )}
-            </div>
+            ) : (
+              <p className="w-96 font-mono font-medium text-center mt-5 text-gray-950 dark:text-gray-200">
+                Kindly, contact me to get the URL of the live project
+              </p>
+            )}
           </div>
         </article>
       </Link>
