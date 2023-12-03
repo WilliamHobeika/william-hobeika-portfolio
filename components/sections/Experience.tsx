@@ -66,7 +66,7 @@ const Experience = () => {
                 cursor: "pointer",
               }}
             >
-              <h3 className="font-semibold capitalize dark:text-white">{item.title}</h3>
+              <h1 className="font-semibold capitalize dark:text-white">{item.title}</h1>
               <p className="font-normal !mt-0">{item.location}</p>
               <p className="!mt-1 !font-normal text-gray-600 dark:text-white/60">
                 {item.description}

@@ -9,7 +9,11 @@ const ThemeSwitch = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <button className="theme-switch_button" onClick={toggleTheme}>
+    <button
+      className="theme-switch_button"
+      aria-label="switch theme"
+      onClick={toggleTheme}
+    >
       {theme === "light" ? <BsSun /> : <BsMoon />}
     </button>
   );

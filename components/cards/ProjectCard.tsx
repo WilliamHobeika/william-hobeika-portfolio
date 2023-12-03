@@ -112,7 +112,7 @@ const ProjectCard = ({
                 />
               </div>
             ) : (
-              <p className="w-96 font-mono font-medium text-center mt-5 text-gray-950 dark:text-gray-200">
+              <p className="w-64 font-mono font-medium text-center mt-5 text-gray-950 dark:text-gray-200 sm:w-96">
                 Kindly, contact me to get the URL of the live project
               </p>
             )}

@@ -40,7 +40,7 @@ const Contact = () => {
           duration: 0.8,
         })}
       >
-        <p className="text-gray-950 dark:text-white/80">
+        <p className="text-gray-950 dark:text-white/80 max-sm:mx-5">
           Please contact me directly at{" "}
           <a
             className="underline text-gray-600 font-medium dark:text-white/60"
