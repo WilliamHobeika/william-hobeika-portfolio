@@ -63,7 +63,7 @@ const ProjectCard = ({
       >
         <article className="project-card_container">
           <div className="project-card_project-text">
-            <h3 className="text-2xl font-medium">{title}</h3>
+            <h1 className="text-2xl font-medium">{title}</h1>
             <p className="mt-2 leading-relaxed text-gray-700 mb-2 dark:text-white/70">
               {description}
             </p>
