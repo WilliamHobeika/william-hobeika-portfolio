@@ -67,7 +67,7 @@ export const projectsData = [
     logoLight: "/assets/click-it-logo.svg",
     logoDark: "/assets/click-it-logo.svg",
     description:
-      "Click-It Events, a comprehensive web application, simplifies event organization and participation, promoting vibrant event discovery and community engagement, thus crafting an interactive platform for unforgettable gatherings.",
+      "Click-It Events, a comprehensive web application, simplifies event organization and participation, promoting vibrant event discovery and community engagement.",
     tags: ["React", "Next.js", "MongoDB", "Tailwind", "Clerk", "Typescript"],
     imageUrl: "/assets/click-it.png",
     link: "  https://click-it-events.vercel.app",
