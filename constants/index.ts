@@ -168,7 +168,7 @@ export const experiencesData = [
     title: "Graduated University",
     location: "Beirut, Lebanon",
     description:
-      "I graduated from university with distinction, highlighting a stellar 3.95 GPA, demonstrating my unwavering commitment to academic excellence and paving the way for a promising career in Software Engineering",
+      "I graduated from university with distinction, highlighting a stellar 3.94 GPA, demonstrating my unwavering commitment to academic excellence and paving the way for a promising career in Software Engineering",
     icon: React.createElement(LuGraduationCap),
     date: "June 2023",
   },
